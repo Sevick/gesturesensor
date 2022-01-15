@@ -1,4 +1,4 @@
-##Gesture sensor
+# Gesture sensor
 
 PAJ7620U2 external homeassistant sensor
 
