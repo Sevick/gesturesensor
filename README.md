@@ -16,3 +16,4 @@ On gesture recognition will fire events:
 - pi4gesture.counterclockwise
 - pi4gesture.wave
 
+Default EVENTNAME is "pi4gesture" and can be redifined via EVENTNAME enviroment variable.

@@ -15,6 +15,7 @@ HASSURL = os.getenv('HASSURL')
 HASSTOKEN = os.getenv('HASSTOKEN')
 hass = Hass(hassurl=HASSURL, token=HASSTOKEN)
 
+EVENTNAME = os.getenv('EVENTNAME', "pi4gesture")
 
 
 #i2c address
@@ -260,31 +261,31 @@ class PAJ7620U2(object):
 		Gesture_Data=self._read_u16(PAJ_INT_FLAG1)
 		if Gesture_Data == PAJ_UP:
 			logger.info("Up\r\n")
-			hass.fire_event("pi4gesture", {"action": "up"})
+			hass.fire_event(EVENTNAME, {"action": "up"})
 		elif Gesture_Data == PAJ_DOWN:
 			logger.info("Down\r\n")
-			hass.fire_event("pi4gesture", {"action": "down"})
+			hass.fire_event(EVENTNAME, {"action": "down"})
 		elif Gesture_Data == PAJ_LEFT:
 			logger.info("Left\r\n")	
-			hass.fire_event("pi4gesture", {"action": "left"})
+			hass.fire_event(EVENTNAME, {"action": "left"})
 		elif Gesture_Data == PAJ_RIGHT:
 			logger.info("Right\r\n")	
-			hass.fire_event("pi4gesture", {"action": "right"})
+			hass.fire_event(EVENTNAME, {"action": "right"})
 		elif Gesture_Data == PAJ_FORWARD:
 			logger.info("Forward\r\n")	
-			hass.fire_event("pi4gesture", {"action": "forward"})
+			hass.fire_event(EVENTNAME, {"action": "forward"})
 		elif Gesture_Data == PAJ_BACKWARD:
 			logger.info("Backward\r\n")
-			hass.fire_event("pi4gesture", {"action": "backward"})
+			hass.fire_event(EVENTNAME, {"action": "backward"})
 		elif Gesture_Data == PAJ_CLOCKWISE:
 			logger.info("Clockwise\r\n")	
-			hass.fire_event("pi4gesture", {"action": "clockwise"})
+			hass.fire_event(EVENTNAME, {"action": "clockwise"})
 		elif Gesture_Data == PAJ_COUNT_CLOCKWISE:
 			logger.info("AntiClockwise\r\n")	
-			hass.fire_event("pi4gesture", {"action": "counterclockwise"})
+			hass.fire_event(EVENTNAME, {"action": "counterclockwise"})
 		elif Gesture_Data == PAJ_WAVE:
 			logger.info("Wave\r\n")	
-			hass.fire_event("pi4gesture", {"action": "wave"})
+			hass.fire_event(EVENTNAME, {"action": "wave"})
 		return Gesture_Data
 
 if __name__ == '__main__':
