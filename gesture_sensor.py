@@ -15,8 +15,8 @@ HASSURL = os.getenv('HASSURL')
 HASSTOKEN = os.getenv('HASSTOKEN')
 hass = Hass(hassurl=HASSURL, token=HASSTOKEN)
 
-EVENTNAME = os.getenv('EVENTNAME', "pi4gesture")
-
+EVENTNAME = os.getenv('GESTURE_EVENTNAME', "pi4gesture")
+DELAY = os.getenv('GESTURE_DELAY', 0.05)
 
 #i2c address
 PAJ7620U2_I2C_ADDRESS   = 0x73

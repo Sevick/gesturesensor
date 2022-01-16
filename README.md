@@ -6,14 +6,15 @@ Don't forget to set HASSURL and HASSTOKEN
 
 On gesture recognition will fire events:
 
-- pi4gesture.up
-- pi4gesture.down
-- pi4gesture.left
-- pi4gesture.right
-- pi4gesture.forward
-- pi4gesture.backward
-- pi4gesture.clockwise
-- pi4gesture.counterclockwise
-- pi4gesture.wave
+- EVENTNAME: action = up
+- EVENTNAME: action = down
+- EVENTNAME: action = left
+- EVENTNAME: action = right
+- EVENTNAME: action = forward
+- EVENTNAME: action = backward
+- EVENTNAME: action = clockwise
+- EVENTNAME: action = counterclockwise
+- EVENTNAME: action = wave
 
-Default EVENTNAME is "pi4gesture" and can be redifined via EVENTNAME enviroment variable.
+Default EVENTNAME is "pi4gesture" and can be redifined via GESTURE_EVENTNAME enviroment variable.
+Delay between measurements can be set using LINUXMON_DELAY (by default - 0.05)
